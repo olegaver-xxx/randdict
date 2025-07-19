@@ -22,3 +22,8 @@ snd_extensions = {
 pic_extensions = {
     1: '.jpg', 2: '.png', 3: '.jpeg', 4: '.tiff'
 }
+
+txt = txt_extensions
+pic = pic_extensions
+vid = vid_extensions
+snd = snd_extensions
