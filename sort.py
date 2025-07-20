@@ -5,7 +5,7 @@ import os, shutil
 what_sort = int(input("Какой тип файла хотите отсортировать?\n 1 - видео\n 2 - аудио\n 3 - фото\n 4 - текст\n"))
 
 
-folder = Path(".")
+folder = Path("/home/melkor/Documents/")
 objects = folder.iterdir()
 
 
@@ -77,7 +77,7 @@ if what_sort == 1:
 
 elif what_sort == 2:
 	sorting(snd)
-	print("AUIDOS SORTING...")
+	print("AUDIOS SORTING...")
 
 elif what_sort == 3:
 	sorting(pic)

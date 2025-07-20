@@ -1,6 +1,8 @@
 import random, os
 from dicts import special_chars, txt_extensions, vid_extensions, snd_extensions, pic_extensions
 
+fullpath = "/home/melkor/Documents/"
+
 txt = txt_extensions
 pic = pic_extensions
 vid = vid_extensions
@@ -36,29 +38,29 @@ for i in cycle:
 		pass
 
 	abc, dynamic_extension = os.path.splitext(dynamic_filename)
-	
+
+	path = os.path.join(fullpath, dynamic_filename)
 
 	def val_check(func):
 		def wrapper(self):
 			for check_ext in self.keys():
 			
-				if self[check_ext] == dynamic_extension:
+				if self[check_ext] == dynamic_extension:			# Проверка на Расширение по словарю
 					func(self)
 				check_ext += 1
 				
 		return wrapper
 
 	# @val_check
-	def generating(self):   
-																  # Проверка на Расширение по словарю
+	def generating(self):
 		print(dynamic_extension)
 
-		with open(dynamic_filename, "a") as file:
+		with open(path, "a") as file:
 
-			for content in cn_cycle:
+			# for content in cn_cycle:
 
-				char_cn_id =  random.randint(2, 29)
-				file.write(special_chars.get(char_cn_id))
+			char_cn_id =  random.randint(2, 29)				# здесь контент фигачим
+			file.write(special_chars.get(char_cn_id))
 
 		
 	generating(pic)
@@ -66,7 +68,7 @@ for i in cycle:
 
 
 	# print(">>>" + dynamic_filename)
-	# with open(dynamic_filename, "a") as file:  # здесь контент фигачим
+	# with open(dynamic_filename, "a") as file:
 	# 	for content in cn_cycle: 
 	# 		char_cn_id =  random.randint(2, 29)
 	# 		file.write(special_chars.get(char_cn_id))
